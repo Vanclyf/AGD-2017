@@ -67,7 +67,7 @@ public class LevelGenerator : MonoBehaviour {
 
     public int CalculateProbabilityWithUserInput(int pProbability, int pUserScore, bool pChallanging, bool pFun)
     {
-        Debug.Log(pFun);
+        
         
         if (pChallanging == false && pFun == false) {
             pUserScore *= 5;

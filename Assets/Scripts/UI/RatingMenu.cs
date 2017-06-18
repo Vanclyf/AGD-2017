@@ -12,6 +12,7 @@ public class RatingMenu : MonoBehaviour {
     // Use this for initialization
 
     void Start () {
+        level = new LevelGenerator();
         isDifficult = GameObject.Find("wasDifficult");
         isFun = GameObject.Find("wasFun");
     }
