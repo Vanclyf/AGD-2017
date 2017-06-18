@@ -6,7 +6,8 @@ public class LevelGenerator : MonoBehaviour {
     public Transform plaform;
     public Transform jumpTrap;
     public Transform duckTrap;
-    public Transform end; 
+    public Transform end;
+    public int pProbability, pUserScore;
 
     public int platformCount;
     private int _platformMargin = 15;
@@ -15,7 +16,7 @@ public class LevelGenerator : MonoBehaviour {
     private int _normalPlatformProbability = 60;
 
     // Use this for initialization
-    void Start () {
+    public void Start () {
 
             for (int x = 0; x < platformCount; x++)
             {
@@ -44,7 +45,19 @@ public class LevelGenerator : MonoBehaviour {
 
             _platformMargin += 10;
             }
+
+            
  
+    }
+
+    public int getProbability()
+    {
+        return pProbability;
+    }
+
+    public int getUserScore()
+    {
+        return pUserScore;
     }
 	
 	// Update is called once per frame
@@ -54,7 +67,7 @@ public class LevelGenerator : MonoBehaviour {
 
     public int CalculateProbabilityWithUserInput(int pProbability, int pUserScore, bool pChallanging, bool pFun)
     {
-    
+        
         
         if (pChallanging == false && pFun == false) {
             pUserScore *= 5;
