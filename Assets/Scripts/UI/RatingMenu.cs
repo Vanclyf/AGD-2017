@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RatingMenu : MonoBehaviour {
     private GameObject isDifficult;
     private GameObject isFun;
+    public LevelGenerator level;
     public bool wasDifficult;
     public bool wasFun;
     // Use this for initialization
@@ -59,8 +60,8 @@ public class RatingMenu : MonoBehaviour {
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("AGD-Level", LoadSceneMode.Single); //TODO add level road map.
-        Time.timeScale = 1;
+        
+        level.CalculateProbabilityWithUserInput( level.getProbability(), level.getUserScore() , getIsDifficult(), getIsFun() );
     }
 
     public void exitGame()
