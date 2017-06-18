@@ -10,7 +10,7 @@ public class LevelGenerator : MonoBehaviour {
 
     public int platformCount;
     private int _platformMargin = 15;
-    public int startingPointX = -100;
+    public int startingPointX;
     private int _randomNumber;
     private int _normalPlatformProbability = 60;
 
@@ -21,7 +21,7 @@ public class LevelGenerator : MonoBehaviour {
             {
             if(x == platformCount -1)
             {
-                Instantiate(end, new Vector3(startingPointX + _platformMargin + 130, 0, 0), Quaternion.identity);
+                Instantiate(end, new Vector3(startingPointX + _platformMargin, 0, 0), Quaternion.identity);
                 break;
             }
             _randomNumber = Random.Range(0, 100);
@@ -37,12 +37,11 @@ public class LevelGenerator : MonoBehaviour {
                     Instantiate(jumpTrap, new Vector3(startingPointX + _platformMargin, -0.1f, 0), Quaternion.identity);
                 } else if (rand <= 100 && rand >= 50)
                 {
-                    Instantiate(duckTrap, new Vector3(startingPointX + _platformMargin + 50, 0, 0), Quaternion.identity);
+                    Instantiate(duckTrap, new Vector3(startingPointX + _platformMargin, 0, 0), Quaternion.identity);
                 }
                 
             }
 
-  
             _platformMargin += 10;
             }
  
