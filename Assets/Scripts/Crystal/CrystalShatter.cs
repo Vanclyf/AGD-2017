@@ -33,7 +33,7 @@ public class CrystalShatter : MonoBehaviour
 		//Handlers
 		HandleCrystalColor ();
 		HandleCrystalShatter ();
-
+        mPlayer = GameObject.Find("Player");
         if(SpecialCrystal)
         {
             HandleSpecialCrystal ();
