@@ -90,9 +90,9 @@ public class LevelGenerator : MonoBehaviour {
                     {
                         Instantiate(jumpTrap, new Vector3(startingPointX + _platformMargin, 0, 0), Quaternion.identity);
                     }
-                    else
+                    else if(rand2 >= 50)
                     {
-                        Instantiate(platform_right_spikes, new Vector3(startingPointX + _platformMargin, -0.1f, 0), Quaternion.identity);
+                        Instantiate(platform_right_spikes, new Vector3(startingPointX + _platformMargin, 0, 0), Quaternion.identity);
                     }
                     _platformMargin += 2;
                 }
